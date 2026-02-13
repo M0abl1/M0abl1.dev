@@ -37,7 +37,7 @@
                             <i class="{{ $skill['icon'] }}"></i>
                         </div>
                         
-                        <span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-300 break-words w-full">
+                        <span class="text-sm font-bold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-300 wrap-break-word w-full">
                             {{ $skill['name'] }}
                         </span>
                         

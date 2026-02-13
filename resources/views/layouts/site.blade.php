@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class', // Isso é essencial!
+            darkMode: 'class', 
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,18 +27,42 @@
     </style>
 
     <script>
-        // Verifica se tem preferência salva OU se o sistema é Dark
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
         } else {
             document.documentElement.classList.remove('dark')
         }
     </script>
+    @push('styles')
+<style>
+    /* Estilo padrão: barra escondida */
+    .hide-scroll-bar::-webkit-scrollbar { 
+        height: 8px;
+        background-color: transparent; 
+    }
+    .hide-scroll-bar::-webkit-scrollbar-thumb { 
+        background-color: transparent; 
+        border-radius: 10px;
+    }
+    .hide-scroll-bar { 
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+    }
+
+    /* Aparece apenas no hover */
+    .hide-scroll-bar:hover::-webkit-scrollbar-thumb { 
+        background-color: #478CBF; /* Azul Docker/Godot */
+    }
+    .hide-scroll-bar:hover {
+        scrollbar-width: thin; /* Firefox */
+    }
+</style>
+@endpush
 </head>
 <body class="bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
 
     <a href="#conteudo-principal" 
-       class="absolute top-0 left-0 -translate-y-full focus:translate-y-0 z-[100] bg-blue-700 text-white font-bold p-4 transition-transform duration-300 shadow-xl rounded-br-lg focus:outline-none">
+       class="absolute top-0 left-0 -translate-y-full focus:translate-y-0 z-100 bg-blue-700 text-white font-bold p-4 transition-transform duration-300 shadow-xl rounded-br-lg focus:outline-none">
         Pular para o conteúdo principal
     </a>
 
