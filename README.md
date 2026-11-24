@@ -63,3 +63,6 @@ O código foi escrito seguindo padrões semânticos:
 - Gestão de `tabindex` para garantir que o fluxo de navegação via teclado siga a ordem lógica de leitura.
 
 ---
+## Licença
+
+[MIT](LICENSE)
